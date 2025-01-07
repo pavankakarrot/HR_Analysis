@@ -33,16 +33,16 @@ df0 = df0.rename(columns={
 df1 = df0.drop_duplicates(keep='first')
 ```
 
-#### Outlier Analysis Summary
+### 3. Outlier Analysis Summary
 
 
 **Outlier Detection Methods Explained:**
-1. IQR Method (Box Plot Method)
+1. **IQR Method (Box Plot Method)**
    - Like finding shirts that are unusually small or large in a clothing store
    - Creates a "normal range" using the middle 50% of data
    - Anything too far from this range is flagged as unusual
 
-2. Z-score Method
+2. **Z-score Method**
    - Like comparing test scores to class average
    - Measures how far each value is from the average
    - Values more than 3 standard deviations away are considered unusual
@@ -58,3 +58,97 @@ df1 = df0.drop_duplicates(keep='first')
 | Left Company | • 17% turnover rate<br>• Above industry average<br>• Immediate attention needed |
 | Promotions | • Very low promotion rate (2%)<br>• Career growth concerns<br>• Potential cause of turnover |
 
+
+
+## 4. Data Upload & Analysis in Tableau
+- Imported hr_analytics_cleaned.csv
+- Created calculated fields for:
+  * Standard hours (166.67)
+  * Tenure grouping
+  * Correlation metrics
+- Set up color schemes: Red (left), Blue (stayed)
+
+## 5. Visualization Process
+Comprehensive Analysis of HR Visualizations:
+
+1. **Turnover Distribution (Basic Bar Chart)**
+- 17% turnover rate
+- Key Risk: High turnover cost impact
+
+2. **Project Load vs Hours (Box Plot & Histogram)**
+- Optimal project load: 3-4 projects
+- 100% turnover for 7-project employees
+- Workload threshold identified
+
+3. **Monthly Hours vs Satisfaction (Scatter Plot)**
+- High hours (240-315) = near-zero satisfaction
+- Sweet spot: 210-280 hours with 0.7-0.9 satisfaction
+- Cultural pressure impact evident
+
+4-5. **Satisfaction by Tenure (Box Plot & Histogram)**
+- Two turnover groups:
+  * Short tenure + low satisfaction
+  * Medium tenure + high satisfaction
+- Critical 4-year mark identified
+
+6. **Salary Distribution by Tenure**
+- No correlation between tenure and salary
+- Limited salary progression
+- Retention challenge identified
+
+7. **Hours vs Evaluation (Scatter Plot)**
+- Overworked high performers leaving
+- Hours-evaluation correlation
+- Work-life balance issues
+
+8-9. **Promotions and Department Analysis**
+- Low promotion rate (2%)
+- Consistent turnover across departments
+- Company-wide retention issue
+
+**Key Correlations:**
+- Strong: Hours-Projects (0.42)
+- Negative: Satisfaction-Left (-0.39)
+- Moderate: Evaluation-Projects (0.35)
+
+## 6. Business Insights
+Key Findings:
+1. Workload Issues
+- 7+ projects = 100% turnover
+- Optimal: 3-4 projects
+- Overworking prevalent
+
+2. Satisfaction Patterns
+- Two turnover groups:
+  * Short tenure + low satisfaction
+  * Medium tenure + high satisfaction
+- Critical 4-year mark
+
+3. Performance Relations
+- Hours correlate with evaluations
+- Low promotion rate (2%)
+- Consistent departmental turnover
+
+4. Retention Risks
+- 17% turnover rate
+- Work-life balance issues
+- Limited career progression
+
+## 7. Challenges & Learnings
+Challenges:
+- Complex data relationships
+- Multiple variable interactions
+- Visualization limitations in Tableau
+
+Learnings:
+- Data cleaning importance
+- Multiple visualization perspectives
+- Business metric correlation
+- HR pattern identification
+
+Recommendations:
+1. Implement project caps
+2. Review 4-year policies
+3. Create career paths
+4. Address workload culture
+5. Develop retention strategy
